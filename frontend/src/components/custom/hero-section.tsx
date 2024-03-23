@@ -25,7 +25,9 @@ interface HeroSectionProps {
 
 export function HeroSection({ data }: Readonly<HeroSectionProps>) {
   console.dir(data, { depth: null });
+  
   const { heading, subHeading, image, link } = data;
+
   const imageURL = "http://localhost:1337" + image.url;
   return (
     <header className="relative h-[600px] overflow-hidden">
