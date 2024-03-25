@@ -48,7 +48,7 @@ export async function getHomePageData() {
   return await fetchData(url.href);
 }
 
-export async function getGlobalPageDate() {
+export async function getGlobalPageData() {
   noStore();
 
   const url = new URL("/api/global", baseUrl);
@@ -60,6 +60,16 @@ export async function getGlobalPageDate() {
       "footer.logoText",
       "footer.socialLink",
     ],
+  });
+
+  return await fetchData(url.href);
+}
+
+export async function getGlobalPageMetadata() {
+  const url = new URL("/api/global", baseUrl);
+
+  url.search = qs.stringify({
+    fields: ["title", "description"],
   });
 
   return await fetchData(url.href);

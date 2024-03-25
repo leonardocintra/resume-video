@@ -1,5 +1,6 @@
 import LinkProps from "next/link";
 import { StrapiImage } from "./strapi-image";
+import { getStrapiURL } from "@/lib/utils";
 
 interface ImageProps {
   id: number;
@@ -27,10 +28,11 @@ interface HeroSectionProps {
 export function HeroSection({ data }: Readonly<HeroSectionProps>) {
   const { heading, subHeading, image, link } = data;
 
-  const imageURL = "http://localhost:1337" + image.url;
+  const imageURL = getStrapiURL() + image.url;
+
   return (
     <header className="relative h-[600px] overflow-hidden">
-      <StrapiImage 
+      <StrapiImage
         alt="video camera"
         className="absolute inset-0 object-cover w-full h-full"
         height={1080}
