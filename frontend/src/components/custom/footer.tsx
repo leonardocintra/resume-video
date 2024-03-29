@@ -20,7 +20,6 @@ interface FooterProps {
 }
 
 function selectSocialIcon(url: string) {
-  console.log(url);
   if (url.includes("youtube")) return <YoutubeIcon className="h-6 w-6" />;
   if (url.includes("twitter")) return <TwitterIcon className="h-6 w-6" />;
   if (url.includes("github")) return <GithubIcon className="h-6 w-6" />;
